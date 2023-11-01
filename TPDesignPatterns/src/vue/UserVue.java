@@ -80,7 +80,8 @@ public class UserVue {
         }
         Employee employee = new Employee();
         System.out.println("Entrez le nom de l'employee :");
-        employee.setName(sc.nextLine());
+        Scanner sc2 = new Scanner(System.in);
+        employee.setName(sc2.nextLine());
         iEmployeeService.updateEmployee(employee, id);
         System.out.println("Employé avec Id : "+ id +" est modifié");
     }

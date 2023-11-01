@@ -11,4 +11,7 @@ public interface IEmployeeService {
     public void deleteEmployee(Long id);
     public List<Employee> getEmployeesList();
     public Employee findById(Long id);
+    public Employee restorePreviousState(int index , long idEmployee);
+    Employee duplicateEmployee(Long employeeId);
+
 }

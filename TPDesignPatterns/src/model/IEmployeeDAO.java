@@ -16,4 +16,6 @@ public interface IEmployeeDAO {
     public void closeConnectionToDB() throws SQLException;
     public Employee findById(Long id);
     public List<Employee> findAll();
+
+
 }

@@ -47,7 +47,7 @@ public class Employee implements Cloneable {
 
     public static class EmployeeBuilder{
         private Employee employee=new Employee();
-        public EmployeeBuilder employeId(Long id){
+        public EmployeeBuilder employeeId(Long id){
             employee.id=id;
             return this;
         }

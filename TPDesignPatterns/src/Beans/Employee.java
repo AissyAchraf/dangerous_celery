@@ -1,6 +1,8 @@
 package Beans;
 
-public class Employee {
+import Utiles.EmployeePreviousState;
+
+public class Employee implements Cloneable {
 
     private Long id;
     private String name;
@@ -29,5 +31,37 @@ public class Employee {
                 "   Id : " + this.getId() + ",\n"+
                 "   Name : " + this.getName() + "\n"+
                 "\n},");
+    }
+    public EmployeePreviousState save(){
+       return new EmployeePreviousState(this.id,this.name);
+    }
+    public void restore(EmployeePreviousState employeePreviousState) {
+        id = employeePreviousState.getId();
+        name=employeePreviousState.getName();
+    }
+
+    @Override
+    public Employee clone() throws CloneNotSupportedException {
+        return (Employee) super.clone();
+    }
+
+    public static class EmployeeBuilder{
+        private Employee employee=new Employee();
+        public EmployeeBuilder employeId(Long id){
+            employee.id=id;
+            return this;
+        }
+        public EmployeeBuilder employeeName(String name){
+            employee.name=name;
+            return this;
+        }
+
+        public Employee build(){
+            return this.employee;
+        }
+
+
+
+
     }
 }

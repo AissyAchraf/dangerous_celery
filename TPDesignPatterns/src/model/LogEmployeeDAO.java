@@ -11,8 +11,8 @@ public class LogEmployeeDAO extends IEmployeeDAOImpl {
 
     private IEmployeeDAO employeeDAO;
 
-    public LogEmployeeDAO(IEmployeeDAO iEmployeeDAO) {
-        this.employeeDAO = iEmployeeDAO;
+    public LogEmployeeDAO(IEmployeeDAO employeeDAO) {
+        this.employeeDAO = employeeDAO;
     }
 
     @Override

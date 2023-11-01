@@ -6,13 +6,13 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class IEmployeeDAOImpl implements IEmployeeDAO {
 
     private Connection connection;
-
     private List<Employee> employeeList = new ArrayList<>();
     private Long currentId = 0L;
 
@@ -34,7 +34,7 @@ public class IEmployeeDAOImpl implements IEmployeeDAO {
     public Employee update(Employee employee, Long id) {
         for (Employee e: employeeList) {
             if(e.getId() == id) {
-                employee.setName(employee.getName());
+                e.setName(employee.getName());
                 return e;
             }
         }
@@ -67,7 +67,7 @@ public class IEmployeeDAOImpl implements IEmployeeDAO {
     }
 
     @Override
-    public List<Employee> findAll() {
-        return employeeList;
+    public List<Employee> findAll() {return employeeList;
     }
+
 }
